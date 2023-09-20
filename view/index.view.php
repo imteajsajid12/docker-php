@@ -3,7 +3,7 @@
 <?php
 include ('view/pirtials/head.view.php');
 include ('view/pirtials/nave.vew.php');
-var_dump($_SERVER);
+//var_dump($_SERVER);
 
 ?>
 <!-- ======= Header ======= -->
