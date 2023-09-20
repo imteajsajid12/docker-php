@@ -1,31 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
 <?php
-$books =[
-    "imteaj sajid",
-    "sajid imteaj",
-    "imteaj imteaj"
+
+$data = [
+    'name' => "Laracst",
+    'cost' => 59
 ];
 
-?>
-<?php 
 
+//conditions
+if ($data['cost'] > 99) {
+    echo "not intersted";
+}
 
-echo $books[1];
-//{
-//    echo $book;
-//}
+//create function
+function test()
+{
 
-?>
-<br>
+}
 
-<?= $books[2] ?>
-</body>
-</html>
+require "view/index.view.php";
