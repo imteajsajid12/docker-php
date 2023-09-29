@@ -12,11 +12,31 @@ services:
             - app-network
 
     # MySQL database service
+#    db:
+#        image: mysql:5.7
+#        container_name: mysql-db
+#        ports:
+#            - "3306:3306"
+#        environment:
+#            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#            MYSQL_DATABASE: ${DB_DATABASE}
+#            MYSQL_USER: ${DB_USERNAME}
+#            MYSQL_PASSWORD: ${DB_PASSWORD}
+#        env_file:
+#            - ./.env
+#        networks:
+#            - app-network
+
+
     db:
-        image: mysql:5.7
-        container_name: mysql-db
-        ports:
-            - "3306:3306"
+        container_name: db
+        image: mysql
+        restart: always
+        #    environment:
+        #      MYSQL_ROOT_PASSWORD: ROOT_PASSWORD
+        #      MYSQL_DATABASE: php-app
+        #      MYSQL_USER: USER
+        #      MYSQL_PASSWORD: PASS
         environment:
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
             MYSQL_DATABASE: ${DB_DATABASE}
@@ -24,6 +44,8 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD}
         env_file:
             - ./.env
+        ports:
+            - "3306:3306"
         networks:
             - app-network
 
@@ -38,6 +60,22 @@ services:
             - ./nginx/conf.d/:/etc/nginx/conf.d/
         networks:
             - app-network
+
+#php myadmin
+    phpmyadmin:
+        image: phpmyadmin
+        container_name: phpmyadmin
+        links:
+            - db
+        environment:
+            PMA_HOST: db
+        restart: always
+        ports:
+            - 8081:80
+        networks:
+            - app-network
+
+
 
 networks:
     app-network:
