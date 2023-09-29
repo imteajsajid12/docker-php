@@ -1,6 +1,11 @@
 <?php
 require "Route/web.php";
 // database connect/
+require ('Database.php');
+
+
+var_dump($_ENV =['DB_USERNAME']);
+
 
 
 //create class

@@ -1,3 +1,8 @@
+# github token
+```typescript
+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
+```
+
 # PHP 8 development environment with PHP-FPM, Nginx and MySQL, using Docker and Docker Compose
 
 You need to have Docker and Docker Compose installed on your server to proceed using this PHP environment.
@@ -23,6 +28,7 @@ docker-compose build app
 ```bash
 docker-compose up -d
 ```
+
 
 - To show information about the state of your active services, run:
 
