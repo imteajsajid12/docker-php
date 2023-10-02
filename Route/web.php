@@ -10,6 +10,7 @@ function Abord($code)
 $routes = [
     '/' => 'Controller/index.php',
     '/about' => 'Controller/About.php',
+    '/notes'=> 'Controller/Notes.php',
 ];
 
 function RouteToControll($uri, $routes){

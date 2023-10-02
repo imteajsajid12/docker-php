@@ -20,22 +20,16 @@ class  Database
         ]);
 
     }
-    public function query()
+    public function query($data)
     {
-        $statement = $this->connection->prepare("SELECT * FROM  users");
+        $statement = $this->connection->prepare($data);
         $statement->execute();
         return $statement->fetchAll( PDO::FETCH_ASSOC );
     }
 
 }
 
-$db = new Database();
-$post = $db->query();
-//var_dump($post);
 
-foreach ($post as $item) {
-    echo $item['name'];
-}
 
 
 
