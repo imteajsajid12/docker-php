@@ -3,10 +3,7 @@
 // create a new database class
 class  Database
 {
-
     public $connection;
-
-
     public function __construct($username = 'user', $password = 'pass')
     {
         $config = [
@@ -23,17 +20,22 @@ class  Database
         ]);
 
     }
-
     public function query()
     {
-        $statement = $this->connection->prepare("SELECT * FROM  user");
+        $statement = $this->connection->prepare("SELECT * FROM  users");
         $statement->execute();
-        return $statement->fetchAll();
+        return $statement->fetchAll( PDO::FETCH_ASSOC );
     }
 
 }
 
 $db = new Database();
 $post = $db->query();
-var_dump($post);
+//var_dump($post);
+
+foreach ($post as $item) {
+    echo $item['name'];
+}
+
+
 
