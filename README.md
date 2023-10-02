@@ -1,6 +1,7 @@
 # github token
 ```typescript
-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
+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
+
 ```
 
 # PHP 8 development environment with PHP-FPM, Nginx and MySQL, using Docker and Docker Compose
