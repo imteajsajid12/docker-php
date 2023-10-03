@@ -3,7 +3,8 @@ services:
 
     # PHP service
     app:
-        build: .
+        build: ./Docker
+        
         container_name: php-app
         working_dir: /var/www/
         volumes:
@@ -26,6 +27,19 @@ services:
             - ./.env
         networks:
             - app-network
+        #php myadmin
+    phpmyadmin:
+      image: phpmyadmin
+      container_name: phpmyadmin
+      links:
+        - db
+      environment:
+        PMA_HOST: db
+      restart: always
+      ports:
+        - 8081:80
+      networks:
+        - app-network
 
     # Nginx service
     nginx:
