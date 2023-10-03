@@ -1,31 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
 <?php
-$books =[
-    "imteaj sajid",
-    "sajid imteaj",
-    "imteaj imteaj"
-];
-
-?>
-<?php 
+// database connect/
+require('Database.php');
+require "Route/web.php";
 
 
-echo $books[1];
-//{
-//    echo $book;
+
+
+
+//foreach ($post as $item) {
+//    echo $item['name'];
 //}
 
-?>
-<br>
 
-<?= $books[2] ?>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+//$host = 'db';
+//$user = 'user';
+//$pass = 'pass';
+//$conn = new mysqli($host, $user, $pass);
+//if ($conn->connect_error) {
+//    die("Connection failed: " . $conn->connect_error);
+//} else {
+//    echo "Connected to MySQL server successfully!";
+//}
+
+
+
