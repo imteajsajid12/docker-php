@@ -5,6 +5,7 @@ require('pirtials/nave.vew.php');
 
 ?>
     <section id="hero" class="" style="color: #ffffff">
+
         <?php foreach ($notes as $key => $note): ?>
             <li><?= $note['name'] ?></li>
 

@@ -3,22 +3,15 @@
 //notes Controllers
 
 
+$id = $_GET['id'];
 
-//query files
-
-
-$id = $_GET["id"];
-$int = (int)$id;
-echo  $id;
-
-$db = new Database();
-$notes = $db->query("SELECT * FROM  users where id = $id");
-
-var_dump($notes['id']);
+$db = new Database( );
+$notes = $db->query("SELECT * FROM  posts")->all();
+var_dump($notes);
 
 
 
 
 
-//include view files
-//include('view/notes_view.php');
+
+

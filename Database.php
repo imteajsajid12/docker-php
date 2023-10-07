@@ -4,6 +4,8 @@
 class  Database
 {
     public $connection;
+    public $statment;
+
     public function __construct($username = 'user', $password = 'pass')
     {
         $config = [
@@ -20,13 +22,35 @@ class  Database
         ]);
 
     }
-    public function query($data)
+
+    public function query($data, $perams = [])
     {
-        $statement = $this->connection->prepare($data);
-        $statement->execute();
-        return $statement->fetch( PDO::FETCH_ASSOC );
+        $this->statment = $this->connection->prepare($data);
+        $this->statment->execute();
+        return $this;
     }
 
+    public function find()
+    {
+        return $this->statment->fetch();
+    }
+
+    public function FindOrFail()
+    {
+        $result = $this->find();
+        if (!$result) {
+            abord(404);
+        }
+        return $result;
+    }
+    public  function get(){
+       return $this->statment->fetch();
+    }
+    //all
+    public function all()
+    {
+       return $this->statment->fetchAll();
+    }
 }
 
 
