@@ -4,6 +4,10 @@
 //    'name' => "Laracst",
 //    'cost' => 59
 //];
-require "view/index.view.php";
+
+ view("index.view.php",
+[
+    'heading'=> "Home"
+]);
 
 

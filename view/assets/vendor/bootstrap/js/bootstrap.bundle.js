@@ -1843,7 +1843,8 @@
 
   var max = Math.max;
   var min = Math.min;
-  var round = Math.round;
+  var
+      round = Math.round;
 
   function getUAString() {
     var uaData = navigator.userAgentData;

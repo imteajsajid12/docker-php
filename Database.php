@@ -25,8 +25,9 @@ class  Database
 
     public function query($data, $perams = [])
     {
+//        var_dump($perams, $data);
         $this->statment = $this->connection->prepare($data);
-        $this->statment->execute();
+        $this->statment->execute($perams);
         return $this;
     }
 
