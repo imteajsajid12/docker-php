@@ -8,6 +8,13 @@ require  base_path('/view/pirtials/nave.vew.php');
 ?>
     <section id="hero" class="" style="color: #ffffff">
 
+
+
+        </div>
+
+    </section><!-- End Hero -->
+
+    <main id="main">
         <!--        table-->
         <div class="container">
             <h2 class=""><?= $heading ?></h2>
@@ -42,13 +49,8 @@ require  base_path('/view/pirtials/nave.vew.php');
             </table>
         </div>
         <!--        table-->
-
-        </div>
-
-    </section><!-- End Hero -->
-
-    <main id="main">
-
+        <br>
+        <br>
     </main>
 <?php
 require base_path('/view/pirtials/footer.view.php')

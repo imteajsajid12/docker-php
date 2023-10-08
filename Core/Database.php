@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 // create a new database class
 class  Database
 {
@@ -17,8 +19,10 @@ class  Database
         ];
 
         $con = 'mysql:' . http_build_query($config, '', ';');
-        $this->connection = new  PDO($con, $username, $password, [
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        $this->connection = new \PDO($con, $username, $password, [
+            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+
+
         ]);
 
     }
@@ -44,14 +48,18 @@ class  Database
         }
         return $result;
     }
-    public  function get(){
-       return $this->statment->fetch();
+
+    public function get()
+    {
+        return $this->statment->fetch();
     }
+
     //all
     public function all()
     {
-       return $this->statment->fetchAll();
+        return $this->statment->fetchAll();
     }
+
 }
 
 

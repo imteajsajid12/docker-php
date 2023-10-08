@@ -1,5 +1,6 @@
 <?php
 
+use Core\Database;
 //notes Controllers
 
 $db = new Database();
