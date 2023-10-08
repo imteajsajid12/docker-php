@@ -1,9 +1,6 @@
 <?php
+namespace  core;
 
-//$data = [
-//    'name' => "Laracst",
-//    'cost' => 59
-//];
 
  view("index.view.php",
 [

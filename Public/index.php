@@ -1,5 +1,5 @@
 <?php
-
+//namespace  Core;
 const  BASE_PATH = __DIR__ . '/../'; // path to the base directory
 
 require(BASE_PATH . '/Core/Function.php'); // path to the function

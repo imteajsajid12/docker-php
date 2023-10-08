@@ -1,5 +1,5 @@
 <?php
-
+namespace Core;
 return  [
     '/' => base_path('Controller/index.php'),
     '/about' => base_path('Controller/About.php'),

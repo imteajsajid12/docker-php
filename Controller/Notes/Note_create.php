@@ -1,10 +1,15 @@
 <?php
+//namespace  Core;
+use Core\Database;
+use Core\validation;
+
 require base_path('/Core/validation.php');
 $heading = "notes Created";
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+$Errors = [];
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
 //validation//
-    $Errors = [];
+
     if (!validation::string($_POST['title'], 1, 255)) {
         $Errors['title'] = "Invalid title requared";
 
@@ -27,4 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 }
 
-require view('/Notes/note.create.view.php');
+view('/Notes/note.create.view.php',[
+    'Errors'=> $Errors
+]);

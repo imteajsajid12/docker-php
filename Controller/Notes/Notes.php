@@ -1,6 +1,7 @@
 <?php
+namespace Core;
+//use Core\Database;
 
-use Core\Database;
 //notes Controllers
 
 $db = new Database();
