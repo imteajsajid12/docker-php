@@ -1,7 +1,7 @@
 <?php
 //namespace  Core;
 use Core\Database;
-//use function Core\RouteToControll;
+
 
 const  BASE_PATH = __DIR__ . '/../'; // path to the base directory
 
@@ -17,19 +17,7 @@ require base_path("Route/web.php"); // path to the route
 
 
 
-//$routes = require ('route.php');
-//var_dump($routes);
-//
-//$router = new Routers();
-//
-//$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-//$router->router($uri, 'GET');
 
-
-//$routes = require ("Route/routes.php");
-//var_dump($routes);
-
-//echo "gad";
 
 
 

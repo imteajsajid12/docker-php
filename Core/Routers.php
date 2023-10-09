@@ -52,6 +52,7 @@ class Routers
     public function router($uri, $method)
     {
         foreach ($this->routes as $route) {
+            /** @var resource $route */
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 return require base_path($route['controller']);
             }
@@ -59,7 +60,7 @@ class Routers
         $this->Abord();
     }
 
-    protected function Abord($code)
+    protected function Abord($code = 404)
     {
         http_response_code(404);
         echo "404";
