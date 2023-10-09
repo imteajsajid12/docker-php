@@ -1,13 +1,10 @@
 <?php
 namespace Core;
-//use Core\Database;
-
 //notes Controllers
+use Routers;
 
 $db = new Database();
 $notes = $db->query("SELECT * FROM  posts")->all();
-
-//$heading = 'notes';
 
 //return view with
  view('/Notes/index.php',[
