@@ -4,56 +4,45 @@ class Routers
 {
     public $routes = [];
 
-    public function get($uri, $controller)
-    { // get all routes
+
+    public  function add($uri, $method, $controller){
+
         $this->routes[] = [
             'uri' => $uri,
             'controller' => $controller,
-            'method' => 'GET',
+            'method' => $method,
         ];
+    }
+    public function get($uri, $controller)
+    { // get all routes
+       $this->add('GET', $uri, $controller);
     }
 
     public function post($uri, $controller)
     { // get all routes
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'POST',
-        ];
+        $this->add('POST', $uri, $controller);
     }
 
     public function Delete($uri, $controller)
     { // get all routes
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'DELETE',
-        ];
+        $this->add('DELETE', $uri, $controller);
     }
 
     public function put($uri, $controller)
     { // get all routes
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'PUT',
-        ];
+        $this->add('PUT', $uri, $controller);
     }
 
     public function patch($uri, $controller)
     { // get all routes
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'Patch',
-        ];
+        $this->add('PATCH', $uri, $controller);
     }
 
     public function router($uri, $method)
     {
         foreach ($this->routes as $route) {
             /** @var resource $route */
-            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+            if ($route['method'] === $method  && $route['uri'] === strtoupper($uri)) {
                 return require base_path($route['controller']);
             }
         }

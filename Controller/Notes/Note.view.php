@@ -2,13 +2,18 @@
 
 
 
-//$id = $_GET['id'];
-//use Core\Database;
+use Core\Database;
+$id= $_GET["id"];
+if(empty($id))
+{ echo "404";}
+else {
+    $heading = "home";
+    $db = new Database();
 
-$heading = "home";
-
-$db = new Database( );
-//$notes = $db->query("SELECT * FROM  posts")->get();
-
-
-require('view/Notes/Notes.view.php');
+    $notes = $db->query('SELECT * FROM  posts  where id= :id', [
+        ':id' => $id
+    ])->get();
+    view('/Notes/Notes_view.php',
+        ['Notes' => $notes
+        ]);
+}

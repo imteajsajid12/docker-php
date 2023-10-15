@@ -10,3 +10,6 @@ function view($path = null, $attributes = []){
        extract($attributes);
       require base_path('view/'.$path);
 }
+ function data(){
+
+}

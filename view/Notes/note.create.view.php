@@ -7,7 +7,7 @@ include base_path('/view/pirtials/nave.vew.php');
 <?php //= $Errors[] ?>
     <section id="hero" class="" style="color: #ffffff">
         <div class="container">
-            <form method="post" action="/note/create">
+            <form method="post" action="/notes/create">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
                     <input type="text" class="form-control" name="title" id="" aria-describedby="emailHelp"
